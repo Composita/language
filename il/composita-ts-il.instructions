@@ -1,0 +1,11 @@
+Instruction ::=
+  code : OperatorCode
+  arguments : [ InstructionArgument ]
+
+InstructionArgument ::=
+  | SystemCallDescriptor
+  | MessageDescriptor
+  | TypeDescriptor
+  | VariableDescriptor
+  | ProcedureDescriptor
+  | JumpDescriptor

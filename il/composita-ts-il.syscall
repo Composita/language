@@ -1,0 +1,28 @@
+SystemCallOperator ::=
+  % Basic Math Ops                                    % stack: top : ValueTypes , ..., bottom : ValueTypes
+  Write                                 =  0          % op, right-value : Showable
+  WriteLine                             =  1          % op
+  WriteHex                              =  2          % op, right-value : ANY
+  Assert                                =  3          % op { numberOfArguments: number }, right-value : ANY
+  Halt                                  =  4          % op, right-value : ANY
+  Inc                                   =  5          % op { numberOfArguments: number }, right-value : ANY
+  Dec                                   =  6          % op { numberOfArguments: number }, right-value : ANY
+  Passivate                             =  7          % op, right-value : ANY
+  Count                                 =  8          % op, right-value : ANY
+  Length                                =  9          % op, right-value : ANY
+  Sqrt                                  = 10          % op, right-value : ANY
+  Sin                                   = 11          % op, right-value : ANY
+  Cos                                   = 12          % op, right-value : ANY
+  Tan                                   = 13          % op, right-value : ANY
+  ArcSin                                = 14          % op, right-value : ANY
+  ArcCos                                = 15          % op, right-value : ANY
+  ArcTan                                = 16          % op, right-value : ANY
+  Random                                = 17          % op, right-value : ANY
+  Min                                   = 18          % op, right-value : ANY
+  Max                                   = 19          % op, right-value : ANY
+  ToCharacter                           = 20          % op, right-value : ANY
+  ToInteger                             = 21          % op, right-value : ANY
+  ToReal                                = 22          % op, right-value : ANY
+  ToText                                = 23          % op, right-value : ANY
+  LoadForEachDesignators                = 24          % op, designator : TypeDescriptor, [ designators : VariableDescriptor ]
+                                                      % finished: BooleanDescriptor

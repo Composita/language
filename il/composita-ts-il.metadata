@@ -1,0 +1,61 @@
+TypeDescriptor ::=
+  | ComponentDescriptor
+  | BuiltInTypeDescriptor
+
+DeclarationDescriptor ::=
+  constants : [ VariableDescriptor ]
+  variables : [ VariableDescriptor ]
+  procedures : [ ProcedureDescriptor ]
+  components : [ ComponentDescriptor ]
+
+ComponentDescriptor ::=
+  offers : [ InterfaceDescriptor ]
+  requires : [ InterfaceDescriptor ]
+  declarations : DeclarationDescriptor
+  implementations : [ ImplementationDescriptor ]
+  begin : CodeBlockDescriptor
+  activity : CodeBlockDescriptor
+  finally : CodeBlockDescriptor
+
+ProcedureDescriptor ::=
+  parameters : [ TypeDescriptor ]
+  returnType : TypeDescriptor?
+  declarations : DeclarationDescriptor
+  begin : CodeBlockDescriptor
+
+ImplementationDescriptor ::=
+  declarations : DeclarationDescriptor
+  begin : CodeBlockDescriptor
+
+VariableDescriptor ::=
+  type : TypeDescriptor
+  mutable : boolean
+  indexTypes : [ TypeDescriptor ]
+
+CodeBlockDescriptor ::=
+  instructions : [ Instruction ]
+
+InterfaceDescriptor ::=
+  protocols : [ ProtocolDescriptor ]
+
+ProtocolDescriptor ::=
+  type : ProtocolType
+  messages : [ MessageDescriptor ]
+
+MessageDescriptor ::=
+  direction : MessageDirection
+  data : [ TypeDescriptor ]
+
+BuiltInTypeDescriptor ::=
+  | Integer
+  | Float
+  | Text
+  | Character
+  | Boolean
+
+JumpDescriptor ::=
+  offset : number
+
+SystemCallDescriptor ::=
+  systemCall: SystemCallOperator
+  arguments: [ TypeDescriptor ]
