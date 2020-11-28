@@ -2,7 +2,7 @@
 
 Program                := { Component | Interface }
 
-Component              := "COMPONENT" Identifier
+Component              := "COMPONENT" [ AttributeList ] Identifier
                           [ "OFFERS" InterfaceDeclList ]
                           [ "REQUIRES" InterfaceDeclList ] ";"
                             ComponentBody
