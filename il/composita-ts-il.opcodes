@@ -30,9 +30,9 @@ OperatorCode ::=
   ClientReceive                         = 18          % op { MessageDescriptor }, receiver: Service, [ TargetVariables: Any ]
   ServerSend                            = 19          % op { MessageDescriptor }, [ MessageArgument : Any ]
   ServerReceive                         = 20          % op { MessageDescriptor }, [ TargetVariables: Any ]
-  Connect                               = 21          % op, right-offered-service: Service, left-required-service: Service                    % 7.3.1
-                                                      % op, right-offered-sub-service: Service, left-offered-redirect-service: Service        % 7.3.2
-                                                      % op, right-required-redirect-service: Service, left-required-sub-service: Service      % 7.3.3
+  Connect                               = 21          % op, right-offered-service: Service, left-required-service: Service | Component                % 7.3.1
+                                                      % op, right-offered-sub-service: Service, left-offered-redirect-service: Service | Component    % 7.3.2
+                                                      % op, right-required-redirect-service: Service, left-required-sub-service: Service              % 7.3.3
   Disconnect,                           = 22          % op, target: Service
   ClientReceiveTest                     = 23          % op { MessageDescriptor }, receiver: Service, [ TargetVariables: Any ]
   ServerReceiveTest                     = 24          % op { MessageDescriptor }, [ TargetVariables: Any ]
@@ -53,7 +53,7 @@ OperatorCode ::=
 
   StoreVariable                         = 36          % op, right-value: Value, left-target: Variable
   LoadVariable                          = 37          % op { VariableDescriptor }, [ Index: BuiltIn ]
-  LoadService                           = 38          % op { InterfaceDescriptor }
+  LoadService                           = 38          % op { InterfaceDescriptor }, 
 
   % Concurrency  
   Await                                 = 39          % op
