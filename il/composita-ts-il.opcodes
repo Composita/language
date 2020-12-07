@@ -26,46 +26,44 @@ OperatorCode ::=
   New                                   = 15          % op { TypeDescriptor }, target: Variable, [ MatrixDimensions: Integer ]
   Delete                                = 16          % op, value : Component
 
-  ClientSend                            = 17          % op { MessageDescriptor }, target: Service, [ MessageArgument : Any ]
-  ClientReceive                         = 18          % op { MessageDescriptor }, receiver: Service, [ TargetVariables: Any ]
-  ServerSend                            = 19          % op { MessageDescriptor }, [ MessageArgument : Any ]
-  ServerReceive                         = 20          % op { MessageDescriptor }, [ TargetVariables: Any ]
-  Connect                               = 21          % op, right-offered-service: Service, left-required-service: Service | Component                % 7.3.1
+  Send                                  = 17          % op { MessageDescriptor }, target: Service, [ MessageArgument : Any ]
+  Receive                               = 18          % op { MessageDescriptor }, receiver: Service, [ TargetVariables: Any ]
+  Connect                               = 19          % op, right-offered-service: Service, left-required-service: Service | Component                % 7.3.1
                                                       % op, right-offered-sub-service: Service, left-offered-redirect-service: Service | Component    % 7.3.2
                                                       % op, right-required-redirect-service: Service, left-required-sub-service: Service              % 7.3.3
-  Disconnect,                           = 22          % op, target: Service
-  ClientReceiveTest                     = 23          % op { MessageDescriptor }, receiver: Service, [ TargetVariables: Any ]
-  ServerReceiveTest                     = 24          % op { MessageDescriptor }, [ TargetVariables: Any ]
-  ClientInputTest                       = 25          % op { MessageDescriptor }, receiver: Service, [ TargetVariables: Any ]
-  ServerInputTest                       = 26          % op { MessageDescriptor }, [ TargetVariables: Any ]
-  SystemCall                            = 27          % op { SystemCallDescriptor }, [ Parameters: Parameter ]
-  ProcedureCall                         = 28          % op { ProcedureDescriptor }, [ Parameters : Parameter ]
-  Return                                = 29          % op
+  Disconnect,                           = 20          % op, target: Service
+  ReceiveTest                           = 21          % op { MessageDescriptor }, receiver: Service, [ TargetVariables: Any ]
+  InputTest                             = 22          % op { MessageDescriptor }, receiver: Service, [ TargetVariables: Any ]
+  SystemCall                            = 23          % op { SystemCallDescriptor }, [ Parameters: Parameter ]
+  ProcedureCall                         = 24          % op { ProcedureDescriptor }, [ Parameters : Parameter ]
+  Return                                = 25          % op
 
   % Load constants  
-  LoadConstantBoolean                   = 30          % op { BooleanDescriptor }
-  LoadConstantText                      = 31          % op { TextDescriptor }
-  LoadConstantCharacter                 = 32          % op { CharacterDescriptor }
-  LoadConstantFloat                     = 33          % op { FloatDescriptor }
-  LoadConstantInteger                   = 34          % op { IntegerDescriptor }
+  LoadConstantBoolean                   = 26          % op { BooleanDescriptor }
+  LoadConstantText                      = 27          % op { TextDescriptor }
+  LoadConstantCharacter                 = 28          % op { CharacterDescriptor }
+  LoadConstantFloat                     = 29          % op { FloatDescriptor }
+  LoadConstantInteger                   = 30          % op { IntegerDescriptor }
 
-  Move                                  = 35          % op, right-target: Component, left-source: Component
+  Move                                  = 31          % op, right-target: Component, left-source: Component
 
-  StoreVariable                         = 36          % op, right-value: Value, left-target: Variable
-  LoadVariable                          = 37          % op { VariableDescriptor }, [ Index: BuiltIn ]
-  LoadService                           = 38          % op { InterfaceDescriptor }, 
+  StoreVariable                         = 32          % op, right-value: Value, left-target: Variable
+  LoadVariable                          = 33          % op { VariableDescriptor }, [ Index: BuiltIn ]
+  LoadService                           = 34          % op { InterfaceDescriptor }, 
+  LoadThis                              = 35          % op { InterfaceDescriptor }, 
 
   % Concurrency  
-  Await                                 = 39          % op
-  AcquireShared                         = 40          % op
-  ReleaseShared                         = 41          % op
-  AcquireExclusive                      = 42          % op
-  ReleaseExclusive                      = 43          % op
+  Await                                 = 36          % op
+  Passivate                             = 37          % op
+  AcquireShared                         = 38          % op
+  ReleaseShared                         = 39          % op
+  AcquireExclusive                      = 40          % op
+  ReleaseExclusive                      = 41          % op
 
-  Branch                                = 44          % op { JumpDescriptor }
-  BranchTrue                            = 45          % op { JumpDescriptor }, value : Boolean
-  BranchFalse                           = 46          % op { JumpDescriptor }, value : Boolean
+  Branch                                = 42          % op { JumpDescriptor }
+  BranchTrue                            = 43          % op { JumpDescriptor }, value : Boolean
+  BranchFalse                           = 44          % op { JumpDescriptor }, value : Boolean
 
-  IsType                                = 47          % op, right-type: ComponentDescriptor, left-value: Variable       % verify that this is only for variables
-  ExistsTest                            = 48          % op, value: Variable                                             % same here
+  IsType                                = 45          % op, right-type: ComponentDescriptor, left-value: Variable       % verify that this is only for variables
+  ExistsTest                            = 46          % op, value: Variable                                             % same here
   
