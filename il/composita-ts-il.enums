@@ -1,8 +1,0 @@
-MessageDirection ::=
-  | In
-  | Out
-
-ProtocolType ::=
-  | Once
-  | Optional
-  | Repeating

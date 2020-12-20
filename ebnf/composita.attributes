@@ -1,5 +1,6 @@
-List of supported attributes:
+List of known attributes:
 
-SHARED                  | Acquire shared access lock
-EXCLUSIVE               | Acquire exclusive access lock
-ENTRYPOINT              | Mark Component as an entry point
+SHARED              % Acquire shared access lock
+EXCLUSIVE           % Acquire exclusive access lock
+ENTRYPOINT          % Mark Component as an entry point
+ARRAY               % Mark Component as an entry point
